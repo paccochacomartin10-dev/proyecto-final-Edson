@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolShop - Camisetas Premium</title>
+    
+  
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/menu-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/mobile-force-fix.css">
+</head>
+<body>
+    <div class="background" id="background"></div>
+    <div class="mesh-gradient"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">⚽</span>
+            <span class="logo-text"><span class="logo-futbol">Futbol</span><span class="logo-shop">Shop</span></span>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="equipos.html" class="nav-link">Equipos</a></li>
+            <li><a href="ofertas.html" class="nav-link">Ofertas</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="cart-button" onclick="toggleCart()">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="badge">✨ Edición Limitada 2024/25</div>
+            <h1 id="productName">Camisetas Premium de Fútbol</h1>
+            <p id="productDesc">Diseños exclusivos de los mejores equipos del mundo. Calidad profesional, tecnología Dri-FIT y comodidad excepcional.</p>
+            
+            <div class="price-section">
+                <div class="price">€<span id="currentPrice">89</span><span class="price-cents">.99</span></div>
+                <div class="old-price">€119.99</div>
+                <div class="discount-badge">-25%</div>
+            </div>
+
+            <div class="sizes-container">
+                <div class="sizes-label">Selecciona tu talla</div>
+                <div class="sizes">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn active" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                    <button class="size-btn" data-size="XXL">XXL</button>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn-primary" id="addToCartBtn">
+                    <span class="btn-icon">🛒</span>
+                    Agregar al Carrito
+                </button>
+                <button class="btn-secondary" id="favoriteBtn">
+                    <span class="btn-icon">♡</span>
+                </button>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Envío Gratis</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Devolución Garantizada</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Pago Seguro</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-showcase">
+            <div class="product-glow"></div>
+            <div class="main-product">
+                <img id="mainProductImg" src="img/barza.png" alt="Camiseta Premium">
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item active" data-team="barcelona">
+            <img src="img/barza.png" alt="Camiseta 1">
+        </div>
+        <div class="gallery-item" data-team="realmadrid">
+            <img src="img/real madrid.png" alt="Camiseta 2">
+        </div>
+        <div class="gallery-item" data-team="psg">
+            <img src="img/psg.png" alt="Camiseta 3">
+        </div>
+        <div class="gallery-item" data-team="mancity">
+            <img src="img/Manchester City.png" alt="Camiseta 4">
+        </div>
+        <div class="gallery-item" data-team="liverpool">
+            <img src="img/liverpool.png" alt="Camiseta 5">
+        </div>
+        <div class="gallery-item" data-team="juventus">
+            <img src="img/juventus.png" alt="Camiseta 6">
+        </div>
+    </div>
+
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+        </div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <div class="empty-icon">🛒</div>
+            <p>Tu carrito está vacío</p>
+            <small>Agrega productos para comenzar</small>
+        </div>
+
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">€<span id="totalAmount">0.00</span></span>
+            </div>
+            <button class="btn-checkout">Proceder al Pago</button>
+            <button class="btn-clear" onclick="clearCart()">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <div class="notification" id="notification">
+        <span class="notification-icon">✓</span>
+        <span class="notification-text">Producto agregado al carrito</span>
+    </div>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/menu-mobile.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+/*   FIX DEFINITIVO MÓVIL - SOBRESCRIBE TODO */
+
+/*  MÓVIL  */
+@media (max-width: 768px) {
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body {
+        overflow-x: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding: 12px 15px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: rgba(102, 126, 234, 0.95) !important;
+        z-index: 100 !important;
+        height: auto !important;
+    }
+
+    .logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .logo-icon {
+        font-size: 26px !important;
+    }
+
+    .logo-text {
+        font-size: 20px !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 28px !important;
+        height: 22px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 102 !important;
+    }
+
+    .menu-toggle span {
+        width: 100% !important;
+        height: 3px !important;
+        background: white !important;
+        display: block !important;
+        border-radius: 2px !important;
+    }
+
+    .cart-button {
+        position: fixed !important;
+        top: 10px !important;
+        right: 50px !important;
+        width: 45px !important;
+        height: 45px !important;
+        z-index: 101 !important;
+    }
+
+    .cart-count {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 11px !important;
+    }
+
+    .background,
+    .mesh-gradient {
+        position: fixed !important;
+        width: 100% !important;
+        height: 100vh !important;
+    }
+
+    .container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 70px 15px 120px 15px !important;
+        margin: 0 !important;
+        gap: 20px !important;
+        min-height: 100vh !important;
+    }
+
+    
+    .content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px !important;
+        margin: 0 !important;
+    }
+
+    .badge {
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+        margin: 0 0 15px 0 !important;
+    }
+
+    .content h1 {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        margin: 0 0 12px 0 !important;
+        padding: 0 10px !important;
+    }
+
+    .content p {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        margin: 0 0 20px 0 !important;
+        padding: 0 10px !important;
+    }
+
+    .price-section {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+    }
+
+    .price {
+        font-size: 40px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .price-cents {
+        font-size: 24px !important;
+    }
+
+    .old-price {
+        font-size: 20px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .discount-badge {
+        font-size: 13px !important;
+        padding: 4px 10px !important;
+        margin: 0 !important;
+    }
+
+    .sizes-container {
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+    }
+
+    .sizes-label {
+        font-size: 12px !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+    }
+
+    .sizes {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .size-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 14px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto 20px auto !important;
+        padding: 0 10px !important;
+    }
+
+    .btn-primary {
+        width: 100% !important;
+        padding: 16px 30px !important;
+        font-size: 16px !important;
+        margin: 0 !important;
+        justify-content: center !important;
+    }
+
+    .btn-secondary {
+        width: 100% !important;
+        height: 55px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50px !important;
+    }
+
+    .features {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 15px 0 0 0 !important;
+    }
+
+    .feature-item {
+        font-size: 13px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .product-showcase {
+        width: 100% !important;
+        margin: 20px 0 !important;
+        padding: 10px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .main-product {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .main-product img {
+        width: 280px !important;
+        max-width: 85vw !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .product-glow {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .gallery {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 30px) !important;
+        max-width: 450px !important;
+        padding: 12px 15px !important;
+        margin: 0 !important;
+        gap: 8px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .gallery-item {
+        width: 55px !important;
+        height: 55px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/*  MÓVIL PEQUEÑO  */
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 28px !important;
+    }
+
+    .price {
+        font-size: 36px !important;
+    }
+
+    .main-product img {
+        width: 240px !important;
+    }
+
+    .gallery-item {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}

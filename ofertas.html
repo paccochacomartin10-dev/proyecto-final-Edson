@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas - FutbolShop</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/ofertas.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/menu-mobile.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+    <link rel="stylesheet" href="css/mobile-force-fix.css">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="background"></div>
+    <div class="mesh-gradient"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon">⚽</span>
+            <span class="logo-text"><span class="logo-futbol">Futbol</span><span class="logo-shop">Shop</span></span>
+        </div>
+
+        <!-- Botón Hamburguesa -->
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="equipos.html" class="nav-link">Equipos</a></li>
+            <li><a href="ofertas.html" class="nav-link active">Ofertas</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para menú móvil -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Botón del Carrito -->
+    <div class="cart-button" onclick="toggleCart()">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="ofertas-container">
+        <!-- Header -->
+        <div class="ofertas-header">
+            <div class="header-content">
+                <div class="countdown-badge">
+                    <i class="fas fa-clock"></i>
+                    <span>Ofertas por tiempo limitado</span>
+                </div>
+                <h1 class="page-title">¡Aprovecha las <span class="title-highlight">Mejores Ofertas</span>!</h1>
+                <p class="page-subtitle">Descuentos increíbles en las camisetas más populares. No dejes pasar estas oportunidades únicas.</p>
+            </div>
+        </div>
+
+        <!-- Banner Principal -->
+        <div class="main-banner">
+            <div class="banner-content">
+                <div class="banner-badge">🔥 SUPER OFERTA</div>
+                <h2 class="banner-title">25% OFF</h2>
+                <p class="banner-desc">En todas las camisetas de la temporada 2024/25</p>
+                <div class="banner-timer" id="mainTimer">
+                    <div class="timer-box">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-label">Días</span>
+                    </div>
+                    <div class="timer-box">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-label">Horas</span>
+                    </div>
+                    <div class="timer-box">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-label">Min</span>
+                    </div>
+                    <div class="timer-box">
+                        <span class="timer-number" id="seconds">00</span>
+                        <span class="timer-label">Seg</span>
+                    </div>
+                </div>
+                <button class="banner-btn" onclick="scrollToProducts()">
+                    Ver Todas las Ofertas
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="banner-image">
+                <img src="img/barza.png" alt="Oferta destacada">
+            </div>
+        </div>
+
+        <!-- Ofertas Destacadas -->
+        <div class="section-title-wrapper">
+            <h2 class="section-title">Ofertas Destacadas</h2>
+            <p class="section-subtitle">Las mejores promociones del momento</p>
+        </div>
+
+        <div class="offers-grid">
+            <!-- Oferta 1: 2x1 -->
+            <div class="offer-card offer-card-large">
+                <div class="offer-badge">2x1</div>
+                <div class="offer-content">
+                    <h3 class="offer-title">Lleva 2 Paga 1</h3>
+                    <p class="offer-desc">En camisetas seleccionadas. Válido en productos marcados con etiqueta 2x1.</p>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-check"></i> Equipos de España</li>
+                        <li><i class="fas fa-check"></i> Todas las tallas disponibles</li>
+                        <li><i class="fas fa-check"></i> Envío gratis incluido</li>
+                    </ul>
+                    <button class="offer-btn" onclick="scrollToProducts()">
+                        Ver Productos
+                    </button>
+                </div>
+                <div class="offer-image">
+                    <img src="img/real madrid.png" alt="2x1">
+                </div>
+            </div>
+
+            <!-- Oferta 2: Envío Gratis -->
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3 class="offer-title-small">Envío Gratis</h3>
+                <p class="offer-desc-small">En compras superiores a €100</p>
+                <div class="offer-highlight">€100+</div>
+                <button class="offer-btn-small" onclick="scrollToProducts()">
+                    Ver Productos
+                </button>
+            </div>
+
+            <!-- Oferta 3: Descuento Primer Compra -->
+            <div class="offer-card">
+                <div class="offer-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3 class="offer-title-small">Primera Compra</h3>
+                <p class="offer-desc-small">15% de descuento extra</p>
+                <div class="offer-highlight">-15%</div>
+                <button class="offer-btn-small" onclick="scrollToProducts()">
+                    Ver Productos
+                </button>
+            </div>
+
+            <!-- Oferta 4: Pack Familiar -->
+            <div class="offer-card offer-card-medium">
+                <div class="offer-badge">PACK</div>
+                <div class="offer-content-medium">
+                    <h3 class="offer-title">Pack Familiar</h3>
+                    <p class="offer-desc">3 camisetas o más con descuento especial del 30%</p>
+                    <div class="pack-price">
+                        <span class="current">€189.99</span>
+                        <span class="original">€269.99</span>
+                    </div>
+                    <button class="offer-btn" onclick="scrollToProducts()">
+                        Ver Productos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Oferta 5: Flash Sale -->
+            <div class="offer-card offer-card-flash">
+                <div class="flash-header">
+                    <i class="fas fa-bolt"></i>
+                    <span>FLASH SALE</span>
+                </div>
+                <h3 class="offer-title">40% OFF</h3>
+                <p class="offer-desc">Productos seleccionados por 24 horas</p>
+                <div class="flash-timer">
+                    <div class="flash-time">
+                        <span id="flashHours">12</span>
+                        <small>h</small>
+                    </div>
+                    <span>:</span>
+                    <div class="flash-time">
+                        <span id="flashMinutes">34</span>
+                        <small>m</small>
+                    </div>
+                    <span>:</span>
+                    <div class="flash-time">
+                        <span id="flashSeconds">56</span>
+                        <small>s</small>
+                    </div>
+                </div>
+                <button class="offer-btn flash-btn" onclick="scrollToProducts()">
+                    Ver Productos
+                </button>
+            </div>
+        </div>
+
+        <!-- PRODUCTOS EN OFERTA -->
+        <div class="section-title-wrapper" id="productosOfertas">
+            <h2 class="section-title">Productos en Oferta</h2>
+            <p class="section-subtitle">Aprovecha estos precios especiales</p>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Los productos se generarán con JavaScript -->
+        </div>
+
+        <!-- Sección de Beneficios -->
+        <div class="benefits-section">
+            <h2 class="section-title">¿Por qué comprar con nosotros?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Productos Auténticos</h3>
+                    <p>100% originales con garantía oficial de los fabricantes</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Envío Rápido</h3>
+                    <p>Recibe tu pedido en 24-48 horas en toda España</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Devolución Gratis</h3>
+                    <p>30 días para devolver sin preguntas, 100% garantizado</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Atención al cliente disponible todos los días del año</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Final -->
+        <div class="cta-final">
+            <h2>¿Listo para comprar?</h2>
+            <p>Aprovecha estos descuentos increíbles antes de que se acaben</p>
+            <button class="cta-btn" onclick="scrollToProducts()">
+                <i class="fas fa-shopping-bag"></i>
+                Ver Productos en Oferta
+            </button>
+        </div>
+    </div>
+
+    <!-- Panel del Carrito -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Los productos se agregarán aquí dinámicamente -->
+        </div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <div class="empty-icon">🛒</div>
+            <p>Tu carrito está vacío</p>
+            <small>Agrega productos para comenzar</small>
+        </div>
+
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">€<span id="totalAmount">0.00</span></span>
+            </div>
+            <button class="btn-checkout">Proceder al Pago</button>
+            <button class="btn-clear" onclick="clearCart()">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <!-- Overlay del carrito -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Notificación -->
+    <div class="notification" id="notification">
+        <span class="notification-icon">✓</span>
+        <span class="notification-text">Producto agregado al carrito</span>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/cart.js"></script>
+    <script src="js/ofertas.js"></script>
+    <script src="js/menu-mobile.js"></script>
+</body>
+</html>
